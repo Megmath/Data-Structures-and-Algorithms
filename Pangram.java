@@ -1,4 +1,7 @@
 import java.util.Arrays;
+/**
+ * @author Meghna Mathur
+ */
 
 public class Pangram {
 
@@ -14,14 +17,9 @@ public class Pangram {
             if(s.charAt(i)>='a' && s.charAt(i)<='z'){
                 index = s.charAt(i) - 'a';
                 alpha[index] = true;
-                //  System.out.println(alpha[index] + " ");
             }
         }
-/*
-        for(int j=0;j<26;j++){
-            System.out.println(alpha[j] + " ");
-        }
-*/
+
         for (int i = 0; i <= 25; i++)
             if (alpha[i] == false)
                 return (false);
