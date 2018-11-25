@@ -5,6 +5,7 @@ import java.util.Scanner;
 /**
  * @author Meghna Mathur
  */
+
 public class QuickSortComparison {
 
     public static int numTrials = 100;
