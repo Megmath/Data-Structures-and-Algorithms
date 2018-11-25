@@ -1,5 +1,3 @@
-package mxm180022;
-
 import java.util.Random;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -7,7 +5,7 @@ import java.util.Scanner;
 /**
  * @author Meghna Mathur
  */
-public class SP10Opt {
+public class QuickSortComparison {
 
     public static int numTrials = 100;
 
@@ -126,7 +124,7 @@ public class SP10Opt {
     }
 
     public static void main(String args[]){
-        SP10Opt sp = new SP10Opt();
+        QuickSortComparison qs = new QuickSortComparison();
 
         Random random = new Random();
 
@@ -153,12 +151,12 @@ public class SP10Opt {
         {
             case 1:
                     Shuffle.shuffle(arr);
-                    sp.quickSort(arr);
+                    qs.quickSort(arr);
 
                 break;
             case 2:
                     Shuffle.shuffle(arr);
-                    sp.quickSort2(arr);
+                    qs.quickSort2(arr);
 
                 break;
             case 3:
