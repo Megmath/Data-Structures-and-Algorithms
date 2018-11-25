@@ -1,6 +1,9 @@
 package LinkedListPackage;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+/**
+ * @author Meghna Mathur
+ */
 
 public class LinkedList<T> {
 
@@ -41,46 +44,6 @@ public class LinkedList<T> {
         while(cursor!=null) {
             System.out.print(cursor.element + " ");
             cursor = cursor.next;
-        }
-    }
-
-    public Iterator<T> iterator() { return new SLLIterator(); }
-
-    protected class SLLIterator implements Iterator<T> {
-        Entry<T> cursor, prev;
-        boolean ready;  // is item ready to be removed?
-
-        SLLIterator() {
-            cursor = head;
-            prev = null;
-            ready = false;
-        }
-
-        public boolean hasNext() {
-            return cursor.next != null;
-        }
-
-        public T next() {
-            prev = cursor;
-            cursor = cursor.next;
-            ready = true;
-            return cursor.element;
-        }
-
-        // Removes the current element (retrieved by the most recent next())
-        // Remove can be called only if next has been called and the element has not been removed
-        public void remove() {
-            if(!ready) {
-                throw new NoSuchElementException();
-            }
-            prev.next = cursor.next;
-            // Handle case when tail of a list is deleted
-            if(cursor == tail) {
-                tail = prev;
-            }
-            cursor = prev;
-            ready = false;  // Calling remove again without calling next will result in exception thrown
-            size--;
         }
     }
 
