@@ -1,7 +1,9 @@
 import java.util.Scanner;
+/**
+ * @author Meghna Mathur
+ */
 
 public class InsertSort {
-   // int[] a = {5, 2, 4, 6, 1, 3};
 
     public void sort(int[] a) {
         int key, i;
