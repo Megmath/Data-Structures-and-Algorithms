@@ -5,20 +5,20 @@ import java.util.Scanner;
  * @author Meghna Mathur
  */
 
-public class BoundedQueue {
+public class BoundedQueue<T> {
 
     int size, capacity;
     int front, rear;
-    int[] bqueue;
+    Object[] bqueue;
 
     public BoundedQueue(int capacity){
         this.capacity = capacity;
         front = rear = -1;
-        bqueue = new int[this.capacity];
+        bqueue = new Object[this.capacity];
         size=0;
     }
 
-    public boolean offer(int x){
+    public boolean offer(T x){
         if(size==capacity)
             return false;
         else if(isEmpty()) {
@@ -35,18 +35,18 @@ public class BoundedQueue {
         }
     }
 
-    public int peek(){
+    public T peek(){
         if(isEmpty())
-            return 0;
+            return null;
         else
-            return(bqueue[front]);
+            return((T)bqueue[front]);
     }
 
-    public int poll(){
+    public T poll(){
         if(isEmpty())
-            return 0;
+            return null;
         else{
-            int temp = bqueue[front];
+            T temp = (T)bqueue[front];
             if(size==1)
                 front = rear = -1;
             else
@@ -76,7 +76,7 @@ public class BoundedQueue {
     }
 
     public static void main(String[] args) {
-        BoundedQueue bq = new BoundedQueue(5);
+        BoundedQueue<Integer> bq = new BoundedQueue<>(5);
         bq.offer(5);
         bq.offer(6);
         bq.offer(10);
