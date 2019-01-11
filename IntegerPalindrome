@@ -1,0 +1,25 @@
+public class IntegerPalindrome {
+    public boolean isPalindrome(int x){
+
+        ArrayList arr = new ArrayList();
+        if(x<0)
+            return false;
+
+        while(x>0){
+            arr.add(x%10);
+            x = x/10;
+        }
+
+        for(int i=0, j=arr.size()-1; i< arr.size()/2; i++, j--){
+            if(arr.get(i) != arr.get(j)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+
+        IntegerPalindrome ip = new IntegerPalindrome();
+        System.out.println(ip.isPalindrome(4567654));
+   }
+}
